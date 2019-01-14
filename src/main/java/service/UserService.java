@@ -66,7 +66,7 @@ public class UserService implements IUserService<User, String> {
     @DELETE
     @Path("/user/{userId}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public User delete(String var1) {
+    public User delete(@PathParam("userId") String var1) {
         LOGGER.info("[UserService] call /user/{userId}");
         return userDAO.delete(var1);
     }
@@ -76,6 +76,7 @@ public class UserService implements IUserService<User, String> {
     @Path("/groups")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public Map<String, List<User>> findAllGroupByGroupId() {
+        LOGGER.info("[UserService] call /groups");
         return userDAO.findAllGroupByGroupId();
     }
 }

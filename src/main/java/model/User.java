@@ -11,6 +11,9 @@ import java.io.Serializable;
 @XmlRootElement(name = "user")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User implements IUser, Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private String name;
     private String groupId;
@@ -47,5 +50,13 @@ public class User implements IUser, Serializable {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuffer(" Id:")
+                .append(this.id).append(" Name:")
+                .append(this.name).append(" GroupId:")
+                .append(this.groupId).toString();
     }
 }
