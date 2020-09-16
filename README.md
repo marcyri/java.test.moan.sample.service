@@ -1,5 +1,5 @@
 # java.test.moan.sample.service
-not so very simple service
+very simple service
 
 **Task:** was given two interfaces, need to implement them and the service of interaction with them.
 
